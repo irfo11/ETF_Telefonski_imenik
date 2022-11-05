@@ -24,7 +24,7 @@ public class Imenik {
      */
     public String dajBroj(String ime) {
         TestPrazanImenik();
-        if(imenik.containsValue(ime)) throw new ElementNijeUImeniku("Ne postoji korisnik");
+        if(!imenik.containsValue(ime)) throw new ElementNijeUImeniku("Ne postoji korisnik");
         String brojevi = "";
         for(Map.Entry<TelefonskiBroj, String> par: imenik.entrySet()){
             if(ime.equals(par.getValue())) brojevi = brojevi.concat(par.getKey().ispisi() + "\n");
@@ -46,7 +46,7 @@ public class Imenik {
     1. Ime Prezime - Broj
     2. Ime Prezime - Broj....
      */
-    String naSlovo(char s){
+    public String naSlovo(char s){
         TestPrazanImenik();
         int i = 1;
         String brojevi = "";
